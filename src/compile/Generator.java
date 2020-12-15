@@ -278,7 +278,7 @@ public class Generator {
                 codes.add(new FourCode(mLine,FourCodeEnum.GET.getValue(), interpretExp(node.getLeft()), interpretExp(node.getRight()), temp));
                 break;
             case Compiler.LT:
-                codes.add(new FourCode(mLine,FourCodeEnum.LT.getValue(), interpretExp(node.getLeft()),:wq! interpretExp(node.getRight()), temp));
+                codes.add(new FourCode(mLine,FourCodeEnum.LT.getValue(), interpretExp(node.getLeft()), interpretExp(node.getRight()), temp));
                 break;
             case Compiler.LET:
                 codes.add(new FourCode(mLine,FourCodeEnum.LET.getValue(), interpretExp(node.getLeft()), interpretExp(node.getRight()), temp));
