@@ -1,0 +1,17 @@
+program -> stmt-sequence
+stmt-sequence -> statement ; stmt-sequence | statement |
+stmt-block -> statement | { stmt-sequence }
+statement -> if-stmt | while-stmt | assign-stmt | write-stmt | declare-stmt
+if-stmt -> if ( exp ) then stmt-block | if ( exp ) then stmt-block else stmt-block
+while-stmt -> while ( exp ) stmt-block
+assign-stmt -> variable = exp ;
+write-stmt -> write exp ;
+declare-stmt -> (int | real) ( (identifier [= exp ]) | (identifier [ exp ]) ) ;
+variable -> identifier [ [ exp ] ]
+exp -> polynomial-exp logical-op polynomial-exp | polynomial-exp
+polynomial-exp -> term add-op additive-exp | term
+term -> factor mul-op term | factor
+factor -> ( exp ) | number | variable | Add-op exp
+logical-op -> > | < | >= | <= | <> | ==
+add-op -> + | -
+mul-op -> * | /
